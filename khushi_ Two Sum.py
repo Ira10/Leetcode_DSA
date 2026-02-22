@@ -7,7 +7,7 @@
 #         print(f'var and x makes 8')
 
 
-a = [0, 1,2,3,4,5,6,7,8]
+a = [0, 1,2,3,4,5,6,7,8]  
 
 for x in a:
     var = 8 - x
@@ -31,4 +31,5 @@ for x in a:
 
 # when this code will fail, when array size is 1, but i need to return in pair
 # always think about edge cases, explainability
+
 
