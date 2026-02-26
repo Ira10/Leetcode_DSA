@@ -4,3 +4,20 @@ Example 1:
 Input: nums = [1,2,3,1]
 Output: true
 Explanation: The element 1 occurs at the indices 0 and 3.
+
+
+
+
+
+class Solution:
+    def containsDuplicate(self, nums: List[int]) -> bool:
+        dict_ = {index: value for index, value in enumerate(nums)}
+
+        for integer in nums:
+            first_int_key_in_dict = next(k for k, v in dict_.items() if v == integer)
+            if result in nums:
+                result_key = next((k for k, v in dict_.items() if v == result and k != first_int_key_in_dict), None)
+                if result_key is not None:
+                    return [first_int_key_in_dict, result_key]
+        
+        
