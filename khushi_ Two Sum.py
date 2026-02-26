@@ -1,3 +1,47 @@
+##### 25th Feb    ### visit again
+
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+
+        dict_ = {index: value for index, value in enumerate(nums)}  ## storing the array as dict in key value pair
+        # print(result)
+
+        for integer in nums:
+            # print(integer)
+            # first_int_key_in_dict = k for k, v in dict_.items() if v == integer
+            first_int_key_in_dict = next(k for k, v in dict_.items() if v == integer)
+            result = target - integer
+            if result in nums:
+                result_key = next((k for k, v in dict_.items() if v == result and k != first_int_key_in_dict), None)
+                if result_key is not None:
+                    return [first_int_key_in_dict, result_key]
+                # final = [first_int_key_in_dict, result_key]
+                # # final = [key for key, value in dict_.items() if value in [integer, result] and first_int_key_in_dict != ]
+                # return final 
+
+
+
+
+    # result_key = next(k for k, v in dict_.items() if v == result and k != first_int_key_in_dict)
+    # final = [first_int_key_in_dict, result_key]
+    # return final
+
+                ## 25 mins gone, need new logic, because 3 is already there , it is taking this. 
+                ## Edge case thinking gotta build okay!!!
+
+
+
+
+  # for index, value in enumerate(nums):
+        #     print(index, value)
+
+        
+
+
+
+
+
+
 # a = [0, 1,2,3,4,5,6,7,8]
 
 # for x in a: 
@@ -31,6 +75,7 @@ for x in a:
 
 # when this code will fail, when array size is 1, but i need to return in pair
 # always think about edge cases, explainability
+
 
 
 
