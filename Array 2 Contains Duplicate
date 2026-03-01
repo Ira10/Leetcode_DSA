@@ -1,23 +1,39 @@
-Given an integer array nums, return true if any value appears at least twice in the array, and return false if every element is distinct.
+# class Solution:
+#     def containsDuplicate(self, nums: List[int]) -> bool:
+#         # dict_ = {index: value for index, value in enumerate(nums)}
+#         numbers = []
 
-Example 1:
-Input: nums = [1,2,3,1]
-Output: true
-Explanation: The element 1 occurs at the indices 0 and 3.
+#         for integer in nums:
+#             # numbers.append(integer)
+#             if integer in numbers:
+#                 return True
+#             numbers.append(integer)
+            
+#         return False
+            
+#       ## above code is failing for too many numbers in an array.  time limit exceeding
 
- 
 
-
+### 2
 
 class Solution:
     def containsDuplicate(self, nums: List[int]) -> bool:
-        dict_ = {index: value for index, value in enumerate(nums)}
+        # dict_ = {index: value for index, value in enumerate(nums)}
+        numbers = set()
 
         for integer in nums:
-            first_int_key_in_dict = next(k for k, v in dict_.items() if v == integer)
-            if result in nums:
-                result_key = next((k for k, v in dict_.items() if v == result and k != first_int_key_in_dict), None)
-                if result_key is not None:
-                    return [first_int_key_in_dict, result_key]
-        
+            # numbers.append(integer)
+            if integer in numbers:
+                return True
+            numbers.add(integer)  ## there is no append in set, only add
+            
+        return False
+            
+      ## above beats 78.80% hehe
+
+
+### the below 3rd code beats 100.00%
+class Solution:
+    def containsDuplicate(self, nums: List[int]) -> bool:
+        return len(nums) != len(set(nums))
         
